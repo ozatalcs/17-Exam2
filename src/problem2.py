@@ -149,6 +149,7 @@ class Triangle(object):
         self.a = a.clone()
         self.b = b.clone()
         self.c = c.clone()
+        self.largest_area = self.area
 
     def area(self):
         """
@@ -244,12 +245,15 @@ class Triangle(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
+        q = self.area()
         self.a.x = self.a.x * f
         self.a.y = self.a.y * f
         self.b.x = self.b.x * f
         self.b.y = self.b.y * f
         self.c.x = self.c.x * f
         self.c.y = self.c.y * f
+        if f > 1:
+            self.largest_area = self.area()
 
     def return_doubled_triangle(self):
         """
@@ -302,7 +306,7 @@ class Triangle(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
-
+        return self.largest_area
 
 ###############################################################################
 # The TEST functions for the  Triangle  class begin here.
