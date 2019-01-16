@@ -91,8 +91,8 @@ def main():
     run_test_area()
     run_test_bigger_triangle()
     run_test_shrink_or_expand()
-    # run_test_return_doubled_triangle()
-    # run_test_get_largest_area()
+    run_test_return_doubled_triangle()
+    run_test_get_largest_area()
 
 
 ###############################################################################
@@ -265,7 +265,7 @@ class Triangle(object):
           :rtype: Triangle:
         """
         # -------------------------------------------------------------------------
-        # TODO: 9
+        # Done: 9
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -273,7 +273,11 @@ class Triangle(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # -------------------------------------------------------------------------
-        
+        a = Point(self.a.x * 2, self.a.y * 2)
+        b = Point(self.b.x * 2, self.b.y * 2)
+        c = Point(self.c.x * 2, self.c.y * 2)
+        new_triangle = Triangle(a, b, c)
+        return new_triangle
 
     def get_largest_area(self):
         """
